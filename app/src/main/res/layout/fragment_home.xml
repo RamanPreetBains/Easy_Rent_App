@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.HomeFragment">
+
+    <!--     <EditText
+             android:id="@+id/et_search"
+             android:layout_width="match_parent"
+             android:layout_height="56dp"
+             android:hint="@string/search_ride" />
+
+         <Button
+             android:id="@+id/btn_search"
+             android:layout_width="match_parent"
+             android:layout_height="56dp"
+             android:layout_below="@+id/et_search"
+             android:layout_marginTop="20dp"
+             android:text="@string/search" />
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/recycler_view"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:layout_below="@+id/btn_search" />-->
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="4dp">
+
+        <fragment
+            android:id="@+id/autocomplete_fragment"
+            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </androidx.cardview.widget.CardView>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:id="@+id/gif"
+        android:layout_below="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/ride"
+        />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/tv_label_first"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gif"
+        android:layout_margin="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/looking_for_an_affordable_ride"
+        android:textColor="@color/purple_500"
+        android:textSize="20sp" />
+
+    <TextView
+        android:gravity="center"
+        android:textStyle="italic"
+        android:id="@+id/tv_label_second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_label_first"
+        android:layout_marginTop="3dp"
+        android:text="@string/we_ve_got_you_covered"
+        android:textColor="@color/purple_500"
+        android:textSize="15sp" />
+
+    <TextView
+        android:background="@color/purple_200"
+        android:id="@+id/tv_postal_code_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_label_second"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:text="@string/enter_your_postal_code_above_to_find_you_a_ride_nearby"
+        android:textColor="@color/purple_500"
+        android:textSize="22sp" />
+
+    <EditText
+        android:id="@+id/et_postal_code"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_postal_code_heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_search_ride"
+        android:layout_width="230dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/et_postal_code"
+        android:layout_centerHorizontal="true"
+        android:text="@string/search_ride" />
+</RelativeLayout>

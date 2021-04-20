@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.PaymentFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_credit_card"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="40dp"
+        android:visibility="gone"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_card">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_chip" />
+
+            <TextView
+                android:id="@+id/tv_bank_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/bank_of_canada"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="80dp"
+                android:text="1234 5678 9012 3456"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="120dp"
+                android:text="User Name"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_exp_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="160dp"
+                android:text="01/24"
+                android:textColor="#ffffff"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="160dp"
+                android:background="#ffffff"
+                android:padding="2dp"
+                android:text="123"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/rl_card_edit"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:elevation="5dp"
+        android:shadowDx="3"
+        android:shadowDy="1"
+        android:shadowRadius="7"
+        android:background="@color/purple_200"
+        card_view:cardCornerRadius="25dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_edit">
+
+        <EditText
+            android:layout_margin="10dp"
+            android:id="@+id/et_cc_number"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:hint="@string/credit_card_number"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:paddingLeft="20dp" />
+
+        <TextView
+            android:id="@+id/tv_select_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_cc_number"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/select_month"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp" />
+
+        <EditText
+            android:id="@+id/et_month"
+            android:layout_width="80dp"
+            android:layout_height="56dp"
+            android:layout_below="@+id/et_cc_number"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:inputType="number"
+            android:layout_marginLeft="20dp" />
+
+        <TextView
+            android:id="@+id/tv_select_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_cc_number"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="30dp"
+            android:layout_toEndOf="@+id/tv_select_month"
+            android:text="@string/select_year"
+            android:textColor="@color/black"
+            android:layout_marginLeft="34dp"
+            android:layout_toRightOf="@+id/tv_select_month" />
+
+        <EditText
+            android:id="@+id/et_year"
+            android:layout_width="80dp"
+            android:layout_height="56dp"
+            android:layout_below="@+id/et_cc_number"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_toEndOf="@+id/et_month"
+            android:inputType="number"
+            android:layout_marginLeft="40dp"
+            android:layout_toRightOf="@+id/et_month" />
+
+        <EditText
+            android:layout_margin="10dp"
+            android:id="@+id/et_cvv"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/et_month"
+            android:layout_marginTop="20dp"
+            android:hint="@string/cvv"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:textColor="@color/black"
+            android:paddingLeft="20dp" />
+    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_margin="5dp"
+        android:id="@+id/btn_edit"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/round_shape"
+        android:text="@string/add" />
+</RelativeLayout>
